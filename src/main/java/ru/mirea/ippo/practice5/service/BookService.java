@@ -1,7 +1,7 @@
 package ru.mirea.ippo.practice5.service;
 
-public interface BookService {
+import ru.mirea.ippo.practice5.model.Book;
 
-
+public interface BookService extends Base<Book, Long> {
 
 }

@@ -1,7 +1,11 @@
 package ru.mirea.ippo.practice5.model;
 
-import jakarta.persistence.*;
+
 import lombok.*;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -15,11 +19,13 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name ="author")
+    @Column(name = "author")
+    @NotBlank
+    @Size(min = 1, max = 200)
     private String author;
 
     @Column(name = "product_type")
-    @Enumerated (EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private ProductType productType;
 
     @Column(name = "cost")
