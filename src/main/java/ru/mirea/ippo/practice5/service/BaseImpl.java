@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @AllArgsConstructor
 public class BaseImpl<T, ID extends Serializable> implements Base<T, ID> {
@@ -24,6 +25,15 @@ public class BaseImpl<T, ID extends Serializable> implements Base<T, ID> {
 
     @Override
     public T update(T item) {
+        AtomicBoolean flag = new AtomicBoolean(false);
+        repository.findAll().forEach(newItem -> {
+            if (newItem.equals(item)) {
+                flag.set(true);
+            }
+        });
+        if (!flag.get()) {
+            throw new RuntimeException("no such item in db");
+        }
         return repository.save(item);
     }
 

@@ -29,7 +29,7 @@ create table if not exists telephones
     product_type   varchar(255)                            not null,
     cost           integer                                 not null,
     name           varchar(255)                            not null,
-    constraint pk_client primary key (id)
+    constraint pk_telephones primary key (id)
 );
 
 create table if not exists washing_machines
@@ -40,7 +40,7 @@ create table if not exists washing_machines
     product_type varchar(255)                            not null,
     cost         integer                                 not null,
     name         varchar(255)                            not null,
-    constraint pk_client primary key (id)
+    constraint pk_washing_machines primary key (id)
 );
 
 

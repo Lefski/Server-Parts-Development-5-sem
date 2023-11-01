@@ -8,7 +8,7 @@ import ru.mirea.ippo.practice5.model.Book;
 import ru.mirea.ippo.practice5.service.BookService;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/books")
 public class BookController extends BaseController<Book, Long, BookService> {
 
     @Autowired
