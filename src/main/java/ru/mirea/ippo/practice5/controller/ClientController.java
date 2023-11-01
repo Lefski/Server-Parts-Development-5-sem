@@ -11,6 +11,7 @@ import ru.mirea.ippo.practice5.service.ClientServiceImpl;
 @RequestMapping("/clients")
 public class ClientController extends BaseController<Client, Long, ClientServiceImpl> {
 
+
     @Autowired
     public ClientController(ClientServiceImpl clientService) {
         super(clientService);
