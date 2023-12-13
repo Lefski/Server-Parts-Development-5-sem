@@ -1,5 +1,7 @@
 package ru.mirea.ippo.practice5.service;
 
+import ru.mirea.ippo.practice5.model.Cart;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -15,4 +17,5 @@ public interface Base<T, ID extends Serializable> {
     List<T> findAll();
 
     void deleteById(ID id);
+
 }
